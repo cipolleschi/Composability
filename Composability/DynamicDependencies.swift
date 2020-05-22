@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol ExternalDependency: AnyObject {
-  var name: String { get }
+public protocol ExternalDependency: AnyObject, Dependency {
+  init()
   func start(dependencies: DependenciesContainer)
 }
 
@@ -17,18 +17,18 @@ public protocol ExternalDependency: AnyObject {
 public class DependenciesContainer {
   /// this is used only to initialize the dependencies in the right order
   /// and to compute the dictDependencies, used after the initialization
-  var dependencies: [ExternalDependency] = []
+  var dependencies: [Dependency] = []
 
-  lazy var dictDependencies: [String: ExternalDependency] = {
+  lazy var dictDependencies: [String: Dependency] = {
     let sequence = self.dependencies.map { return ($0.name, $0)}
-    return [String: ExternalDependency].init(uniqueKeysWithValues: sequence)
+    return [String: Dependency].init(uniqueKeysWithValues: sequence)
   }()
 
   init(){
 
   }
 
-  public subscript(dynamicMember member: String) -> ExternalDependency? {
+  public subscript(dynamicMember member: String) -> Dependency? {
     return self.dictDependencies[member]
   }
 }
@@ -40,7 +40,7 @@ extension DependenciesContainer {
     configuration.dependencies.forEach { depConfiguration in
       let fullClassName = "\(depConfiguration.frameworkName).\(depConfiguration.dependencyName)"
       guard
-        let bundle = Bundle.allFrameworks.first { $0.bundlePath.contains(depConfiguration.frameworkName) },
+        let bundle = Bundle.allFrameworks.first(where: { $0.bundlePath.contains(depConfiguration.frameworkName) }),
         let dependencyType = bundle.classNamed(fullClassName) as? NSObject.Type,
         let dependency = dependencyType.init() as? ExternalDependency
       else {
@@ -50,8 +50,24 @@ extension DependenciesContainer {
     }
 
     DispatchQueue.global().async {
-      self.dependencies.forEach { $0.start(dependencies: self) }
+      self.dependencies.forEach { ($0 as? ExternalDependency)?.start(dependencies: self) }
     }
 
+  }
+
+  internal convenience init(configurations: [TypeSafeDependencyConfiguration]) {
+    self.init()
+    configurations.forEach { dependency in
+      switch dependency {
+      case .system(let system):
+        self.dependencies.append(system())
+      case .external(let external):
+        self.dependencies.append(external.init())
+      }
+    }
+
+    DispatchQueue.global().async {
+      self.dependencies.forEach { ($0 as? ExternalDependency)?.start(dependencies: self) }
+    }
   }
 }

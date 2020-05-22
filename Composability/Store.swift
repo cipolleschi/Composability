@@ -17,6 +17,11 @@ public class Store {
     self.dependencies = DependenciesContainer(configuration: configuration)
   }
 
+  public init(configuration: TypeSafeConfiguration) {
+    self.state = DynamicState(configurations: configuration.stateConfigurations)
+    self.dependencies = DependenciesContainer(configurations: configuration.dependenciesConfigurations)
+  }
+
   var context: Context {
     return Context(getState: { self.state }, dependencies: self.dependencies, dispatch: self.dispatch(_:))
   }

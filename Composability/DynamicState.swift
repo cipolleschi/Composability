@@ -42,7 +42,7 @@ extension DynamicState {
     configuration.states.forEach { stateConfiguration in
       let fullClassName = "\(stateConfiguration.frameworkName).\(stateConfiguration.stateProviderName)"
       guard
-        let bundle = Bundle.allFrameworks.first { $0.bundlePath.contains(stateConfiguration.frameworkName) },
+        let bundle = Bundle.allFrameworks.first(where: { $0.bundlePath.contains(stateConfiguration.frameworkName) }),
         let stateProviderType = bundle.classNamed(fullClassName) as? NSObject.Type,
         let stateProvider = stateProviderType.init() as? StateProvider
       else {
@@ -51,6 +51,14 @@ extension DynamicState {
 
       let featureState = stateProvider.getState()
       self.states[featureState.sliceName] = featureState
+    }
+  }
+
+  internal init(configurations: [TypeSafeStateConfiguration]){
+    self.init()
+    configurations.forEach {
+        let sliceState = $0.stateFactory()
+      self.states[sliceState.sliceName] = sliceState
     }
   }
 }
