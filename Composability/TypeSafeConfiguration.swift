@@ -32,12 +32,15 @@ public enum TypeSafeDependencyConfiguration {
 public struct TypeSafeConfiguration {
   public var stateConfigurations: [TypeSafeStateConfiguration]
   public var dependenciesConfigurations: [TypeSafeDependencyConfiguration]
+  public var onStartDispatchables: [OnStartDispatchable.Type]
 
   public init(
     stateConfigurations: [TypeSafeStateConfiguration],
-    dependenciesConfigurations: [TypeSafeDependencyConfiguration]
+    dependenciesConfigurations: [TypeSafeDependencyConfiguration],
+    onStartDispatchables: [OnStartDispatchable.Type] = []
   ) {
     self.stateConfigurations = stateConfigurations
     self.dependenciesConfigurations = dependenciesConfigurations
+    self.onStartDispatchables = onStartDispatchables
   }
 }

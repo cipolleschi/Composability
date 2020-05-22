@@ -12,10 +12,16 @@ import Foundation
 public struct Configuration {
   public var states: [StateConfiguration]
   public var dependencies: [DependenciesConfiguration]
+  public var onStartDispatchables: [OnStartDispatchable.Type]
 
-  public init(states: [StateConfiguration], dependencies: [DependenciesConfiguration]) {
+  public init(
+    states: [StateConfiguration],
+    dependencies: [DependenciesConfiguration],
+    onStartDispatchables: [OnStartDispatchable.Type] = []
+  ) {
     self.states = states
     self.dependencies = dependencies
+    self.onStartDispatchables = onStartDispatchables
   }
 }
 
