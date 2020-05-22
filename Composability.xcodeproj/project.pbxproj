@@ -19,6 +19,24 @@
 		51D0C2A3247570BB00C0030E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C2A2247570BB00C0030E /* Store.swift */; };
 		51D0C2AD2475729600C0030E /* AppExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 51D0C2AB2475729600C0030E /* AppExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51D0C2B2247572A500C0030E /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C2B1247572A500C0030E /* Main.swift */; };
+		51D3345624768DF900533EEB /* GenericFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 51D3345424768DF900533EEB /* GenericFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51D3345B24768E5600533EEB /* Composability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D0C2702475288A00C0030E /* Composability.framework */; };
+		51D3345C24768E5600533EEB /* Composability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51D0C2702475288A00C0030E /* Composability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		51D3346024768E5F00533EEB /* Composability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D0C2702475288A00C0030E /* Composability.framework */; };
+		51D3346124768E5F00533EEB /* Composability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51D0C2702475288A00C0030E /* Composability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		51D3346524768E6200533EEB /* FeatureA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D0C29124752AFE00C0030E /* FeatureA.framework */; };
+		51D3346624768E6200533EEB /* FeatureA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51D0C29124752AFE00C0030E /* FeatureA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		51D3346924768E6500533EEB /* GenericFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D3345224768DF900533EEB /* GenericFeature.framework */; };
+		51D3346A24768E6500533EEB /* GenericFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51D3345224768DF900533EEB /* GenericFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		51D3346D24768E7000533EEB /* Composability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D0C2702475288A00C0030E /* Composability.framework */; };
+		51D3346E24768E7000533EEB /* Composability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51D0C2702475288A00C0030E /* Composability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		51D3347324768E8100533EEB /* GenericState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D3347224768E8100533EEB /* GenericState.swift */; };
+		51D334752477A5A700533EEB /* TypeSafeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D334742477A5A700533EEB /* TypeSafeConfiguration.swift */; };
+		51D334772477A96800533EEB /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D334762477A96800533EEB /* AppConfigurations.swift */; };
+		51D334812477AD2200533EEB /* ComposableUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 51D3347F2477AD2200533EEB /* ComposableUserDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51D334862477AD3000533EEB /* ComposableUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D334852477AD3000533EEB /* ComposableUserDefaults.swift */; };
+		51D334872477AD4800533EEB /* ComposableUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D3347D2477AD2200533EEB /* ComposableUserDefaults.framework */; };
+		51D334882477AD4800533EEB /* ComposableUserDefaults.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51D3347D2477AD2200533EEB /* ComposableUserDefaults.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +47,88 @@
 			remoteGlobalIDString = 51D0C26F2475288A00C0030E;
 			remoteInfo = Composability;
 		};
+		51D3345D24768E5600533EEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51D0C2672475288A00C0030E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51D0C26F2475288A00C0030E;
+			remoteInfo = Composability;
+		};
+		51D3346224768E5F00533EEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51D0C2672475288A00C0030E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51D0C26F2475288A00C0030E;
+			remoteInfo = Composability;
+		};
+		51D3346724768E6200533EEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51D0C2672475288A00C0030E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51D0C29024752AFE00C0030E;
+			remoteInfo = FeatureA;
+		};
+		51D3346B24768E6500533EEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51D0C2672475288A00C0030E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51D3345124768DF900533EEB;
+			remoteInfo = GenericFeature;
+		};
+		51D3346F24768E7000533EEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51D0C2672475288A00C0030E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51D0C26F2475288A00C0030E;
+			remoteInfo = Composability;
+		};
+		51D334892477AD4800533EEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51D0C2672475288A00C0030E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51D3347C2477AD2200533EEB;
+			remoteInfo = ComposableUserDefaults;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		51D3345F24768E5600533EEB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				51D3345C24768E5600533EEB /* Composability.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D3346424768E5F00533EEB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				51D334882477AD4800533EEB /* ComposableUserDefaults.framework in Embed Frameworks */,
+				51D3346124768E5F00533EEB /* Composability.framework in Embed Frameworks */,
+				51D3346A24768E6500533EEB /* GenericFeature.framework in Embed Frameworks */,
+				51D3346624768E6200533EEB /* FeatureA.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D3347124768E7100533EEB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				51D3346E24768E7000533EEB /* Composability.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		51D0C2702475288A00C0030E /* Composability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Composability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +150,16 @@
 		51D0C2AB2475729600C0030E /* AppExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppExample.h; sourceTree = "<group>"; };
 		51D0C2AC2475729600C0030E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51D0C2B1247572A500C0030E /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		51D3345224768DF900533EEB /* GenericFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GenericFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D3345424768DF900533EEB /* GenericFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenericFeature.h; sourceTree = "<group>"; };
+		51D3345524768DF900533EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51D3347224768E8100533EEB /* GenericState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericState.swift; sourceTree = "<group>"; };
+		51D334742477A5A700533EEB /* TypeSafeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSafeConfiguration.swift; sourceTree = "<group>"; };
+		51D334762477A96800533EEB /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
+		51D3347D2477AD2200533EEB /* ComposableUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D3347F2477AD2200533EEB /* ComposableUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposableUserDefaults.h; sourceTree = "<group>"; };
+		51D334802477AD2200533EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51D334852477AD3000533EEB /* ComposableUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableUserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +182,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D3345B24768E5600533EEB /* Composability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		51D0C2A62475729600C0030E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D334872477AD4800533EEB /* ComposableUserDefaults.framework in Frameworks */,
+				51D3346024768E5F00533EEB /* Composability.framework in Frameworks */,
+				51D3346924768E6500533EEB /* GenericFeature.framework in Frameworks */,
+				51D3346524768E6200533EEB /* FeatureA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D3344F24768DF900533EEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D3346D24768E7000533EEB /* Composability.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D3347A2477AD2200533EEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,7 +222,10 @@
 				51D0C2822475297300C0030E /* ComposabilityTests */,
 				51D0C29224752AFE00C0030E /* FeatureA */,
 				51D0C2AA2475729600C0030E /* AppExample */,
+				51D3345324768DF900533EEB /* GenericFeature */,
+				51D3347E2477AD2200533EEB /* ComposableUserDefaults */,
 				51D0C2712475288A00C0030E /* Products */,
+				51D3345A24768E5600533EEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +236,8 @@
 				51D0C2812475297300C0030E /* ComposabilityTests.xctest */,
 				51D0C29124752AFE00C0030E /* FeatureA.framework */,
 				51D0C2A92475729600C0030E /* AppExample.framework */,
+				51D3345224768DF900533EEB /* GenericFeature.framework */,
+				51D3347D2477AD2200533EEB /* ComposableUserDefaults.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +251,7 @@
 				51D0C29B2475552400C0030E /* DynamicDependencies.swift */,
 				51D0C29E247555A900C0030E /* Configuration.swift */,
 				51D0C2A2247570BB00C0030E /* Store.swift */,
+				51D334742477A5A700533EEB /* TypeSafeConfiguration.swift */,
 			);
 			path = Composability;
 			sourceTree = "<group>";
@@ -147,8 +282,36 @@
 				51D0C2AB2475729600C0030E /* AppExample.h */,
 				51D0C2AC2475729600C0030E /* Info.plist */,
 				51D0C2B1247572A500C0030E /* Main.swift */,
+				51D334762477A96800533EEB /* AppConfigurations.swift */,
 			);
 			path = AppExample;
+			sourceTree = "<group>";
+		};
+		51D3345324768DF900533EEB /* GenericFeature */ = {
+			isa = PBXGroup;
+			children = (
+				51D3345424768DF900533EEB /* GenericFeature.h */,
+				51D3345524768DF900533EEB /* Info.plist */,
+				51D3347224768E8100533EEB /* GenericState.swift */,
+			);
+			path = GenericFeature;
+			sourceTree = "<group>";
+		};
+		51D3345A24768E5600533EEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51D3347E2477AD2200533EEB /* ComposableUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				51D3347F2477AD2200533EEB /* ComposableUserDefaults.h */,
+				51D334802477AD2200533EEB /* Info.plist */,
+				51D334852477AD3000533EEB /* ComposableUserDefaults.swift */,
+			);
+			path = ComposableUserDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +338,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D0C2AD2475729600C0030E /* AppExample.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D3344D24768DF900533EEB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D3345624768DF900533EEB /* GenericFeature.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D334782477AD2200533EEB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D334812477AD2200533EEB /* ComposableUserDefaults.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,10 +404,12 @@
 				51D0C28D24752AFE00C0030E /* Sources */,
 				51D0C28E24752AFE00C0030E /* Frameworks */,
 				51D0C28F24752AFE00C0030E /* Resources */,
+				51D3345F24768E5600533EEB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				51D3345E24768E5600533EEB /* PBXTargetDependency */,
 			);
 			name = FeatureA;
 			productName = FeatureA;
@@ -243,14 +424,57 @@
 				51D0C2A52475729600C0030E /* Sources */,
 				51D0C2A62475729600C0030E /* Frameworks */,
 				51D0C2A72475729600C0030E /* Resources */,
+				51D3346424768E5F00533EEB /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51D3346324768E5F00533EEB /* PBXTargetDependency */,
+				51D3346824768E6200533EEB /* PBXTargetDependency */,
+				51D3346C24768E6500533EEB /* PBXTargetDependency */,
+				51D3348A2477AD4800533EEB /* PBXTargetDependency */,
+			);
+			name = AppExample;
+			productName = AppExample;
+			productReference = 51D0C2A92475729600C0030E /* AppExample.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		51D3345124768DF900533EEB /* GenericFeature */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51D3345724768DF900533EEB /* Build configuration list for PBXNativeTarget "GenericFeature" */;
+			buildPhases = (
+				51D3344D24768DF900533EEB /* Headers */,
+				51D3344E24768DF900533EEB /* Sources */,
+				51D3344F24768DF900533EEB /* Frameworks */,
+				51D3345024768DF900533EEB /* Resources */,
+				51D3347124768E7100533EEB /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51D3347024768E7000533EEB /* PBXTargetDependency */,
+			);
+			name = GenericFeature;
+			productName = GenericFeature;
+			productReference = 51D3345224768DF900533EEB /* GenericFeature.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		51D3347C2477AD2200533EEB /* ComposableUserDefaults */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51D334822477AD2200533EEB /* Build configuration list for PBXNativeTarget "ComposableUserDefaults" */;
+			buildPhases = (
+				51D334782477AD2200533EEB /* Headers */,
+				51D334792477AD2200533EEB /* Sources */,
+				51D3347A2477AD2200533EEB /* Frameworks */,
+				51D3347B2477AD2200533EEB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AppExample;
-			productName = AppExample;
-			productReference = 51D0C2A92475729600C0030E /* AppExample.framework */;
+			name = ComposableUserDefaults;
+			productName = ComposableUserDefaults;
+			productReference = 51D3347D2477AD2200533EEB /* ComposableUserDefaults.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -278,6 +502,14 @@
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
 					};
+					51D3345124768DF900533EEB = {
+						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
+					};
+					51D3347C2477AD2200533EEB = {
+						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
+					};
 				};
 			};
 			buildConfigurationList = 51D0C26A2475288A00C0030E /* Build configuration list for PBXProject "Composability" */;
@@ -297,6 +529,8 @@
 				51D0C2802475297300C0030E /* ComposabilityTests */,
 				51D0C29024752AFE00C0030E /* FeatureA */,
 				51D0C2A82475729600C0030E /* AppExample */,
+				51D3345124768DF900533EEB /* GenericFeature */,
+				51D3347C2477AD2200533EEB /* ComposableUserDefaults */,
 			);
 		};
 /* End PBXProject section */
@@ -330,6 +564,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51D3345024768DF900533EEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D3347B2477AD2200533EEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -338,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D0C29F247555A900C0030E /* Configuration.swift in Sources */,
+				51D334752477A5A700533EEB /* TypeSafeConfiguration.swift in Sources */,
 				51D0C29C2475552400C0030E /* DynamicDependencies.swift in Sources */,
 				51D0C27C2475289B00C0030E /* DynamicState.swift in Sources */,
 				51D0C2A3247570BB00C0030E /* Store.swift in Sources */,
@@ -365,7 +614,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D334772477A96800533EEB /* AppConfigurations.swift in Sources */,
 				51D0C2B2247572A500C0030E /* Main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D3344E24768DF900533EEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D3347324768E8100533EEB /* GenericState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D334792477AD2200533EEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D334862477AD3000533EEB /* ComposableUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +642,36 @@
 			isa = PBXTargetDependency;
 			target = 51D0C26F2475288A00C0030E /* Composability */;
 			targetProxy = 51D0C2872475297300C0030E /* PBXContainerItemProxy */;
+		};
+		51D3345E24768E5600533EEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51D0C26F2475288A00C0030E /* Composability */;
+			targetProxy = 51D3345D24768E5600533EEB /* PBXContainerItemProxy */;
+		};
+		51D3346324768E5F00533EEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51D0C26F2475288A00C0030E /* Composability */;
+			targetProxy = 51D3346224768E5F00533EEB /* PBXContainerItemProxy */;
+		};
+		51D3346824768E6200533EEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51D0C29024752AFE00C0030E /* FeatureA */;
+			targetProxy = 51D3346724768E6200533EEB /* PBXContainerItemProxy */;
+		};
+		51D3346C24768E6500533EEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51D3345124768DF900533EEB /* GenericFeature */;
+			targetProxy = 51D3346B24768E6500533EEB /* PBXContainerItemProxy */;
+		};
+		51D3347024768E7000533EEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51D0C26F2475288A00C0030E /* Composability */;
+			targetProxy = 51D3346F24768E7000533EEB /* PBXContainerItemProxy */;
+		};
+		51D3348A2477AD4800533EEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51D3347C2477AD2200533EEB /* ComposableUserDefaults */;
+			targetProxy = 51D334892477AD4800533EEB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -681,6 +977,104 @@
 			};
 			name = Release;
 		};
+		51D3345824768DF900533EEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GenericFeature/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bendingspoonsapps.GenericFeature;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51D3345924768DF900533EEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GenericFeature/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bendingspoonsapps.GenericFeature;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		51D334832477AD2200533EEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ComposableUserDefaults/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bendingspoonsapps.ComposableUserDefaults;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51D334842477AD2200533EEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ComposableUserDefaults/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bendingspoonsapps.ComposableUserDefaults;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -725,6 +1119,24 @@
 			buildConfigurations = (
 				51D0C2AF2475729600C0030E /* Debug */,
 				51D0C2B02475729600C0030E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51D3345724768DF900533EEB /* Build configuration list for PBXNativeTarget "GenericFeature" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51D3345824768DF900533EEB /* Debug */,
+				51D3345924768DF900533EEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51D334822477AD2200533EEB /* Build configuration list for PBXNativeTarget "ComposableUserDefaults" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51D334832477AD2200533EEB /* Debug */,
+				51D334842477AD2200533EEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
