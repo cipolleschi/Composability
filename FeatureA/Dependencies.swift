@@ -9,11 +9,13 @@
 import Foundation
 import Composability
 
-class FeatureAManager: NSObject, ExternalDependency {
+public class FeatureAManager: NSObject, ExternalDependency {
 
-  let name: String = "FeatureAManager"
+  public let name: String = "FeatureAManager"
 
-  func start(dependencies: DependenciesContainer) {}
+  public override required init() {}
+
+  public func start(dependencies: DependenciesContainer) {}
 
   func doStuff() {}
 }
