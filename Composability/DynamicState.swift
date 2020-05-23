@@ -15,7 +15,7 @@ public protocol State {
 
 /// State protocol that must be implemented by the other modules
 public protocol SliceState: State {
-  var sliceName: String { get }
+  static var sliceName: String { get }
 }
 
 /// New state structure that will hold all the slices
@@ -50,7 +50,7 @@ extension DynamicState {
       }
 
       let featureState = stateProvider.getState()
-      self.states[featureState.sliceName] = featureState
+      self.states[type(of: featureState).sliceName] = featureState
     }
   }
 
@@ -58,7 +58,7 @@ extension DynamicState {
     self.init()
     configurations.forEach {
         let sliceState = $0.stateFactory()
-      self.states[sliceState.sliceName] = sliceState
+      self.states[type(of: sliceState).sliceName] = sliceState
     }
   }
 }

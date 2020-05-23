@@ -10,7 +10,7 @@ import Foundation
 import Composability
 
 public struct SettingsState<T: Codable>: SliceState {
-  public var sliceName: String = "SettingsState"
+  public static var sliceName: String  { return "\(Self.self)" }
 
   var settings: T?
   public init() {
@@ -20,6 +20,6 @@ public struct SettingsState<T: Codable>: SliceState {
 
 extension DynamicState {
   func settingsState<T>() -> SettingsState<T> {
-      return self[dynamicMember: "SettingsState"] as! SettingsState<T>
+    return self[dynamicMember: SettingsState<T>.sliceName] as! SettingsState<T>
   }
 }

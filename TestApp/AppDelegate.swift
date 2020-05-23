@@ -8,6 +8,7 @@
 
 import UIKit
 import Composability
+import OnBoarding
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,12 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.store = Store(configuration: AppConfigurations.configuration)
 
     let window = UIWindow()
-    let vc = ViewController(store: self.store)
+    let vc = OnBoarding.OnboardingNC(store: self.store)
     window.rootViewController = vc
 
     self.window = window
     window.makeKeyAndVisible()
-
 
 
     return true

@@ -10,12 +10,14 @@ import Foundation
 import Composability
 import ComposableUserDefaults
 import SettingsManager
+import OnBoarding
 
 enum AppConfigurations {
   static var configuration: TypeSafeConfiguration {
     return TypeSafeConfiguration(
       stateConfigurations: [
-        TypeSafeStateConfiguration(stateFactory: { return SettingsManager.SettingsState<Settings>() })
+        TypeSafeStateConfiguration(stateFactory: { return SettingsManager.SettingsState<Settings>() }),
+        TypeSafeStateConfiguration(stateFactory: { return OnBoarding.OnBoardingState() })
       ],
       dependenciesConfigurations: [
         .system(UserDefaults.standard)

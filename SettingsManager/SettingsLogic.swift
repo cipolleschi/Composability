@@ -23,18 +23,32 @@ public enum SettingsLogic {
     }
   }
 
-  struct UpdateSettings<T: Codable>: StateUpdater {
+  struct UpdateSettings<T: Codable>: SettingsStateUpdater {
     var newSettings: T
-    func updateState(state: DynamicState) -> DynamicState {
-      var newState = state
-      var settingsState: SettingsState<T> = state.settingsState()
-      settingsState.settings = newSettings
-      newState[dynamicMember: settingsState.sliceName] = settingsState
-      return state
+    func updateState(_ currentState: inout SettingsState<T>){
+
+      currentState.settings = newSettings
+
     }
   }
 }
 
 var settingTestData: Data {
   return try! JSONSerialization.data(withJSONObject: ["test_string": "test_value", "test_number": 10], options: [])
+}
+
+protocol SettingsStateUpdater: StateUpdater {
+  associatedtype T: Codable
+
+  func updateState(_ currentState: inout SettingsState<T>)
+}
+
+extension SettingsStateUpdater {
+  func updateState(state: DynamicState) -> DynamicState {
+    var newState = state
+    var settingsState: SettingsState<T> = state.settingsState()
+    self.updateState(&settingsState)
+    newState[dynamicMember: type(of: settingsState).sliceName] = settingsState
+    return state
+  }
 }
