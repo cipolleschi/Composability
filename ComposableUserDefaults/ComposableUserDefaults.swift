@@ -10,13 +10,13 @@ import Foundation
 import Composability
 
 extension UserDefaults: Dependency {
-  public var name: String {
-    return "UserDefaults"
+  public static var name: String {
+    return "\(Self.self)"
   }
 }
 
 public extension DependenciesContainer {
   var userDefaults: UserDefaults {
-    return self[dynamicMember: "UserDefaults"] as! UserDefaults
+    return self[dynamicMember: UserDefaults.name] as! UserDefaults
   }
 }

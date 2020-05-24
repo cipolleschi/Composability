@@ -8,20 +8,38 @@
 
 import Foundation
 
-public class Store {
-  var state: DynamicState
+public class Store: Dependency {
+  public static var name: String { return "\(Self.self)"}
+
+  public internal(set) var state: DynamicState
   var dependencies: DependenciesContainer
   var subscribers: [StateSubscriber] = []
+  var dispatchableSubscribers: [String: [DispatchableSubscriber.Type]]
 
   public init(configuration: Configuration) {
     self.state = DynamicState(configuration: configuration)
     self.dependencies = DependenciesContainer(configuration: configuration)
+    self.dispatchableSubscribers = configuration.dispatchableSubscribers
+
+    // set the store as Dependency (for simplicity sake)
+    self.dependencies.dependencies.insert(self, at: 0)
+    self.dependencies.start()
+
+    // app started, run onStart Dispatchables
     self.runOnStartDispatchables(dispatchables: configuration.onStartDispatchables)
+    
   }
 
   public init(configuration: TypeSafeConfiguration) {
     self.state = DynamicState(configurations: configuration.stateConfigurations)
     self.dependencies = DependenciesContainer(configurations: configuration.dependenciesConfigurations)
+    self.dispatchableSubscribers = configuration.dispatchableSubscribers
+
+    // set the store as Dependency (for simplicity sake)
+    self.dependencies.dependencies.insert(self, at: 0)
+    self.dependencies.start()
+    
+    // app started, run onStart Dispatchables
     self.runOnStartDispatchables(dispatchables: configuration.onStartDispatchables)
   }
 
@@ -41,35 +59,37 @@ public class Store {
   }
 
   public func dispatch(_ dispatchable: Dispatchable) throws -> Any? {
+    var returned: Any?
     if let se = dispatchable as? SideEffect {
       let context = self.context
-      return try? se.sideEffect(context: context)
+      returned = try? se.sideEffect(context: context)
     } else if let su = dispatchable as? StateUpdater {
       let oldState = self.state
       self.state = su.updateState(state: self.state)
       self.subscribers.forEach { $0.stateDidUpdate(oldState: oldState, newState: self.state)}
-      return ()
+      returned = ()
+    }
+
+    if let toDispatch = self.dispatchableSubscribers[String(reflecting: type(of: dispatchable))] {
+      toDispatch.forEach {
+        guard let d = $0.init(dispatchable: dispatchable) else {
+          return
+        }
+        _ = try? self.dispatch(d)
+      }
     }
     
-    return ()
+    return returned
   }
 }
 
-public struct Context {
-  public let getState: () -> DynamicState
-  public let dependencies: DependenciesContainer
-  public let dispatch: (Dispatchable) throws -> Any
+public extension DependenciesContainer {
+  var store: Store {
+    return self[dynamicMember: Store.name] as! Store
+  }
 }
 
-public protocol Dispatchable {}
-
-public protocol StateUpdater: Dispatchable {
-  func updateState(state: DynamicState) -> DynamicState
-}
-
-public protocol SideEffect: Dispatchable {
-  func sideEffect(context: Context) throws -> Any
-}
+// MARK: Subscribers
 
 public protocol OnStartDispatchable: Dispatchable {
   init()
@@ -77,4 +97,8 @@ public protocol OnStartDispatchable: Dispatchable {
 
 public protocol StateSubscriber {
   func stateDidUpdate(oldState: DynamicState, newState: DynamicState)
+}
+
+public protocol DispatchableSubscriber: Dispatchable {
+  init?(dispatchable: Dispatchable)
 }

@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 import Composability
 
-public class OnboardingNC: UINavigationController {
+class OnboardingNC: UINavigationController {
   let store: Store
 
-  public init(store: Store) {
+  init(store: Store) {
     self.store = store
     super.init(nibName: nil, bundle: nil)
     self.viewControllers = [OnboardingNameVC(store: self.store)]

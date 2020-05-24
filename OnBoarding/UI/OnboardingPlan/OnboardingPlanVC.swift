@@ -23,11 +23,9 @@ class OnboardingPlanVC: ComposableVC {
 
   override func setupInteractions() {
     self.rootView.userDidTapNext = {
-
+      _ = try? self.store.dispatch(OnboardingEnd(data: [:]))
     }
   }
-
-
 }
 
 // MARK: - ViewModel

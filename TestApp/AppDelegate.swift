@@ -20,14 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     self.store = Store(configuration: AppConfigurations.configuration)
 
-    let window = UIWindow()
-    let vc = OnBoarding.OnboardingNC(store: self.store)
-    window.rootViewController = vc
-
-    self.window = window
-    window.makeKeyAndVisible()
-
-
     return true
   }
 

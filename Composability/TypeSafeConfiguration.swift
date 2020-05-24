@@ -21,7 +21,7 @@ public struct TypeSafeStateConfiguration {
 }
 
 public protocol Dependency {
-  var name: String { get }
+  static var name: String { get }
 }
 
 public enum TypeSafeDependencyConfiguration {
@@ -33,14 +33,18 @@ public struct TypeSafeConfiguration {
   public var stateConfigurations: [TypeSafeStateConfiguration]
   public var dependenciesConfigurations: [TypeSafeDependencyConfiguration]
   public var onStartDispatchables: [OnStartDispatchable.Type]
+  public var dispatchableSubscribers: [String: [DispatchableSubscriber.Type]]
+
 
   public init(
     stateConfigurations: [TypeSafeStateConfiguration],
     dependenciesConfigurations: [TypeSafeDependencyConfiguration],
-    onStartDispatchables: [OnStartDispatchable.Type] = []
+    onStartDispatchables: [OnStartDispatchable.Type] = [],
+    dispatchableSubscribers: [String: [DispatchableSubscriber.Type]] = [:]
   ) {
     self.stateConfigurations = stateConfigurations
     self.dependenciesConfigurations = dependenciesConfigurations
     self.onStartDispatchables = onStartDispatchables
+    self.dispatchableSubscribers = dispatchableSubscribers
   }
 }

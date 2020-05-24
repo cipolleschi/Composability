@@ -13,15 +13,18 @@ public struct Configuration {
   public var states: [StateConfiguration]
   public var dependencies: [DependenciesConfiguration]
   public var onStartDispatchables: [OnStartDispatchable.Type]
+  public var dispatchableSubscribers: [String: [DispatchableSubscriber.Type]]
 
   public init(
     states: [StateConfiguration],
     dependencies: [DependenciesConfiguration],
-    onStartDispatchables: [OnStartDispatchable.Type] = []
+    onStartDispatchables: [OnStartDispatchable.Type] = [],
+    dispatchableSubscribers: [String: [DispatchableSubscriber.Type]] = [:]
   ) {
     self.states = states
     self.dependencies = dependencies
     self.onStartDispatchables = onStartDispatchables
+    self.dispatchableSubscribers = dispatchableSubscribers
   }
 }
 

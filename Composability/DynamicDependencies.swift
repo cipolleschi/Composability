@@ -20,7 +20,7 @@ public class DependenciesContainer {
   var dependencies: [Dependency] = []
 
   lazy var dictDependencies: [String: Dependency] = {
-    let sequence = self.dependencies.map { return ($0.name, $0)}
+    let sequence = self.dependencies.map { return (type(of: $0).name, $0)}
     return [String: Dependency].init(uniqueKeysWithValues: sequence)
   }()
 
@@ -30,6 +30,10 @@ public class DependenciesContainer {
 
   public subscript(dynamicMember member: String) -> Dependency? {
     return self.dictDependencies[member]
+  }
+
+  func start() {
+    self.dependencies.compactMap { $0 as? ExternalDependency }.forEach( { $0.start(dependencies: self) })
   }
 }
 
@@ -48,11 +52,6 @@ extension DependenciesContainer {
       }
       self.dependencies.append(dependency)
     }
-
-    DispatchQueue.global().async {
-      self.dependencies.forEach { ($0 as? ExternalDependency)?.start(dependencies: self) }
-    }
-
   }
 
   internal convenience init(configurations: [TypeSafeDependencyConfiguration]) {
@@ -64,10 +63,6 @@ extension DependenciesContainer {
       case .external(let external):
         self.dependencies.append(external.init())
       }
-    }
-
-    DispatchQueue.global().async {
-      self.dependencies.forEach { ($0 as? ExternalDependency)?.start(dependencies: self) }
     }
   }
 }
