@@ -19,7 +19,7 @@ public struct SettingsState<T: Codable>: SliceState {
 }
 
 extension DynamicState {
-  func settingsState<T>() -> SettingsState<T> {
+  public func settingsState<T>() -> SettingsState<T> {
     return self[dynamicMember: SettingsState<T>.sliceName] as! SettingsState<T>
   }
 }
