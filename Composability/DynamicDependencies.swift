@@ -39,22 +39,8 @@ public class DependenciesContainer {
 
 /// Initializer that creates the state from a configuration
 extension DependenciesContainer {
-  internal convenience init(configuration: Configuration) {
-    self.init()
-    configuration.dependencies.forEach { depConfiguration in
-      let fullClassName = "\(depConfiguration.frameworkName).\(depConfiguration.dependencyName)"
-      guard
-        let bundle = Bundle.allFrameworks.first(where: { $0.bundlePath.contains(depConfiguration.frameworkName) }),
-        let dependencyType = bundle.classNamed(fullClassName) as? NSObject.Type,
-        let dependency = dependencyType.init() as? ExternalDependency
-      else {
-        return
-      }
-      self.dependencies.append(dependency)
-    }
-  }
 
-  internal convenience init(configurations: [TypeSafeDependencyConfiguration]) {
+  internal convenience init(configurations: [DependencyConfiguration]) {
     self.init()
     configurations.forEach { dependency in
       switch dependency {

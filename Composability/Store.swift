@@ -17,20 +17,6 @@ public class Store: Dependency {
   var dispatchableSubscribers: [String: [DispatchableSubscriber.Type]]
 
   public init(configuration: Configuration) {
-    self.state = DynamicState(configuration: configuration)
-    self.dependencies = DependenciesContainer(configuration: configuration)
-    self.dispatchableSubscribers = configuration.dispatchableSubscribers
-
-    // set the store as Dependency (for simplicity sake)
-    self.dependencies.dependencies.insert(self, at: 0)
-    self.dependencies.start()
-
-    // app started, run onStart Dispatchables
-    self.runOnStartDispatchables(dispatchables: configuration.onStartDispatchables)
-    
-  }
-
-  public init(configuration: TypeSafeConfiguration) {
     self.state = DynamicState(configurations: configuration.stateConfigurations)
     self.dependencies = DependenciesContainer(configurations: configuration.dependenciesConfigurations)
     self.dispatchableSubscribers = configuration.dispatchableSubscribers

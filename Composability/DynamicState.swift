@@ -37,24 +37,7 @@ public struct DynamicState: State {
 
 /// Initializer that creates the state from a configuration
 extension DynamicState {
-  internal init(configuration: Configuration) {
-    self.init()
-    configuration.states.forEach { stateConfiguration in
-      let fullClassName = "\(stateConfiguration.frameworkName).\(stateConfiguration.stateProviderName)"
-      guard
-        let bundle = Bundle.allFrameworks.first(where: { $0.bundlePath.contains(stateConfiguration.frameworkName) }),
-        let stateProviderType = bundle.classNamed(fullClassName) as? NSObject.Type,
-        let stateProvider = stateProviderType.init() as? StateProvider
-      else {
-        return
-      }
-
-      let featureState = stateProvider.getState()
-      self.states[type(of: featureState).sliceName] = featureState
-    }
-  }
-
-  internal init(configurations: [TypeSafeStateConfiguration]){
+  internal init(configurations: [StateConfiguration]){
     self.init()
     configurations.forEach {
         let sliceState = $0.stateFactory()

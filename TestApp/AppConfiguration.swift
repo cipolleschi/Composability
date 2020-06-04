@@ -15,11 +15,11 @@ import UIKit
 import Tabbar
 
 enum AppConfigurations {
-  static var configuration: TypeSafeConfiguration {
-    return TypeSafeConfiguration(
+  static var configuration: Configuration {
+    return Configuration(
       stateConfigurations: [
-        TypeSafeStateConfiguration(stateFactory: { return SettingsManager.SettingsState<Settings>() }),
-        TypeSafeStateConfiguration(stateFactory: { return OnBoarding.OnBoardingState() })
+        StateConfiguration(stateFactory: { return SettingsManager.SettingsState<Settings>() }),
+        StateConfiguration(stateFactory: { return OnBoarding.OnBoardingState() })
       ],
       dependenciesConfigurations: [
         .system( { return UIWindow() }()),
