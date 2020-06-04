@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5100E6682488DEEA00BDB1A0 /* SettingsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511F46B324782CBF00D730CA /* SettingsManager.framework */; };
+		5100E6692488DEEA00BDB1A0 /* SettingsManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 511F46B324782CBF00D730CA /* SettingsManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		511F466A2477F4EC00D730CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F46692477F4EC00D730CA /* AppDelegate.swift */; };
 		511F466E2477F4EC00D730CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F466D2477F4EC00D730CA /* ViewController.swift */; };
 		511F46732477F4ED00D730CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 511F46722477F4ED00D730CA /* Assets.xcassets */; };
@@ -62,14 +64,20 @@
 		51D0C27C2475289B00C0030E /* DynamicState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C27B2475289B00C0030E /* DynamicState.swift */; };
 		51D0C2862475297300C0030E /* Composability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D0C2702475288A00C0030E /* Composability.framework */; };
 		51D0C29C2475552400C0030E /* DynamicDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C29B2475552400C0030E /* DynamicDependencies.swift */; };
-		51D0C29F247555A900C0030E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C29E247555A900C0030E /* Configuration.swift */; };
 		51D0C2A3247570BB00C0030E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0C2A2247570BB00C0030E /* Store.swift */; };
-		51D334752477A5A700533EEB /* TypeSafeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D334742477A5A700533EEB /* TypeSafeConfiguration.swift */; };
+		51D334752477A5A700533EEB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D334742477A5A700533EEB /* Configuration.swift */; };
 		51D334812477AD2200533EEB /* ComposableUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 51D3347F2477AD2200533EEB /* ComposableUserDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51D334862477AD3000533EEB /* ComposableUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D334852477AD3000533EEB /* ComposableUserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5100E66A2488DEEA00BDB1A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51D0C2672475288A00C0030E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 511F46B224782CBF00D730CA;
+			remoteInfo = SettingsManager;
+		};
 		511F467D2477F4F800D730CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 51D0C2672475288A00C0030E /* Project object */;
@@ -217,6 +225,7 @@
 			files = (
 				511F471A247A6F8800D730CA /* Navigator.framework in Embed Frameworks */,
 				511F46E924798F5800D730CA /* Composability.framework in Embed Frameworks */,
+				5100E6692488DEEA00BDB1A0 /* SettingsManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,9 +297,8 @@
 		51D0C27B2475289B00C0030E /* DynamicState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicState.swift; sourceTree = "<group>"; };
 		51D0C2812475297300C0030E /* ComposabilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposabilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D0C29B2475552400C0030E /* DynamicDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicDependencies.swift; sourceTree = "<group>"; };
-		51D0C29E247555A900C0030E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		51D0C2A2247570BB00C0030E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		51D334742477A5A700533EEB /* TypeSafeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSafeConfiguration.swift; sourceTree = "<group>"; };
+		51D334742477A5A700533EEB /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		51D3347D2477AD2200533EEB /* ComposableUserDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableUserDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D3347F2477AD2200533EEB /* ComposableUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposableUserDefaults.h; sourceTree = "<group>"; };
 		51D334802477AD2200533EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -325,6 +333,7 @@
 			files = (
 				511F4719247A6F8800D730CA /* Navigator.framework in Frameworks */,
 				511F46E824798F5800D730CA /* Composability.framework in Frameworks */,
+				5100E6682488DEEA00BDB1A0 /* SettingsManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,9 +536,8 @@
 				51D0C2742475288A00C0030E /* Info.plist */,
 				51D0C27B2475289B00C0030E /* DynamicState.swift */,
 				51D0C29B2475552400C0030E /* DynamicDependencies.swift */,
-				51D0C29E247555A900C0030E /* Configuration.swift */,
 				51D0C2A2247570BB00C0030E /* Store.swift */,
-				51D334742477A5A700533EEB /* TypeSafeConfiguration.swift */,
+				51D334742477A5A700533EEB /* Configuration.swift */,
 				511F46EF2479927000D730CA /* ComposableVC.swift */,
 				511F471F247A740900D730CA /* Dispatchable.swift */,
 			);
@@ -666,6 +674,7 @@
 			dependencies = (
 				511F46EB24798F5800D730CA /* PBXTargetDependency */,
 				511F471C247A6F8800D730CA /* PBXTargetDependency */,
+				5100E66B2488DEEA00BDB1A0 /* PBXTargetDependency */,
 			);
 			name = OnBoarding;
 			productName = OnBoarding;
@@ -954,9 +963,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51D0C29F247555A900C0030E /* Configuration.swift in Sources */,
 				511F46F02479927000D730CA /* ComposableVC.swift in Sources */,
-				51D334752477A5A700533EEB /* TypeSafeConfiguration.swift in Sources */,
+				51D334752477A5A700533EEB /* Configuration.swift in Sources */,
 				511F4720247A740900D730CA /* Dispatchable.swift in Sources */,
 				51D0C29C2475552400C0030E /* DynamicDependencies.swift in Sources */,
 				51D0C27C2475289B00C0030E /* DynamicState.swift in Sources */,
@@ -982,6 +990,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5100E66B2488DEEA00BDB1A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 511F46B224782CBF00D730CA /* SettingsManager */;
+			targetProxy = 5100E66A2488DEEA00BDB1A0 /* PBXContainerItemProxy */;
+		};
 		511F467E2477F4F800D730CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 51D0C26F2475288A00C0030E /* Composability */;
